@@ -114,6 +114,9 @@ def plot(obj, pen):
         plot_point(obj, pen)
     elif gtype == 'LineString':
         plot_linestring(obj, pen)
+    elif gtype == 'LinearRing':
+        # same as a linestring, but closed
+        plot_linestring(obj, pen)
     elif gtype == 'Polygon':
         plot_polygon(obj, pen)
     elif gtype == 'Multipoint':
@@ -125,7 +128,7 @@ def plot(obj, pen):
     elif gtype == 'GeomCollection':
         plot_geomcollection(obj, pen)
     else:
-        print '*** Un-handled geometry:', gtype
+        print '*** Un-handled geometry:', gtype, ':', obj
         exit(1)
 
 
